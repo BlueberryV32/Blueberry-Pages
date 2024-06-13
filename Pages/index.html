@@ -29,7 +29,6 @@
         }
         .button-container {
             margin-top: 10px;
-            display: none; /* Initially hidden */
         }
         .button-container a {
             background-color: #555;
@@ -94,4 +93,31 @@
                 document.getElementById("passcode-message").innerText = "Incorrect passcode. Please try again.";
             }
             // Reset the input field after checking passcode
-            document.getElementB
+            document.getElementById("passcode").value = "";
+        }
+    </script>
+</head>
+<body>
+
+<div class="passcode-container">
+    <h2>Enter Passcode</h2>
+    <input type="password" id="passcode" class="passcode-input" placeholder="Enter passcode">
+    <button class="passcode-submit" onclick="checkPasscode()">Submit</button>
+    <div id="passcode-message" class="passcode-message"></div>
+</div>
+
+<div class="content">
+    <h1>Your Customizable Text</h1>
+    <p>Modify this area to suit your needs.</p>
+    <div class="button-container">
+        <a href="https://example.com" target="_blank">Button 1</a>
+        <a href="https://anotherlink.com" target="_blank">Button 2</a>
+    </div>
+</div>
+
+<div class="copyright">
+    &copy; BlueberryWX 2024. All rights reserved.
+</div>
+
+</body>
+</html>
