@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Local Website</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000; /* fallback color */
+            background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+            transition: background-color 0.5s ease;
+        }
+        .passcode-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .passcode-input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+            text-align: center;
+            margin-right: 10px;
+        }
+        .passcode-submit {
+            background-color: #555;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .passcode-submit:hover {
+            background-color: #777;
+        }
+        .passcode-message {
+            margin-top: 10px;
+            color: #ccc;
+        }
+        .copyright {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: #ccc;
+            font-size: 12px;
+        }
+    </style>
+    <script>
+        function checkPasscode() {
+            var passcode = document.getElementById("passcode").value;
+            if (passcode === "Blue2Good") {
+                document.body.style.background = "linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red)";
+                document.getElementById("passcode-message").innerText = "Correct passcode!";
+            } else {
+                document.getElementById("passcode-message").innerText = "Incorrect passcode. Please try again.";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="passcode-container">
+    <h1>Welcome to Your Local Website</h1>
+    <p>Please enter the passcode to proceed.</p>
+    <input type="password" id="passcode" class="passcode-input" placeholder="Enter passcode">
+    <button class="passcode-submit" onclick="checkPasscode()">Submit</button>
+    <div id="passcode-message" class="passcode-message"></div>
+</div>
+
+<div class="copyright">
+    &copy; BlueberryWX 2024. All rights reserved.
+</div>
+
+</body>
+</html>
