@@ -3,23 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Local Website</title>
+    <title>Your Website Title</title>
     <style>
         body {
             margin: 0;
             padding: 0;
+            background-color: #000;
+            color: #fff;
             font-family: Arial, sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #000; /* fallback color */
-            background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
             transition: background-color 0.5s ease;
         }
-        .passcode-container {
+        .content {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
             text-align: center;
+            max-width: 80%;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            margin-top: 10px;
+        }
+        .button-container a {
+            background-color: #555;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 0 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .button-container a:hover {
+            background-color: #777;
+        }
+        .passcode-container {
             margin-top: 20px;
+            text-align: center;
         }
         .passcode-input {
             padding: 8px;
@@ -61,14 +87,24 @@
             } else {
                 document.getElementById("passcode-message").innerText = "Incorrect passcode. Please try again.";
             }
+            // Reset the input field after checking passcode
+            document.getElementById("passcode").value = "";
         }
     </script>
 </head>
 <body>
 
+<div class="content">
+    <h1>Your Customizable Text</h1>
+    <p>Modify this area to suit your needs.</p>
+    <div class="button-container">
+        <a href="https://example.com" target="_blank">Button 1</a>
+        <a href="https://anotherlink.com" target="_blank">Button 2</a>
+    </div>
+</div>
+
 <div class="passcode-container">
-    <h1>Welcome to Your Local Website</h1>
-    <p>Please enter the passcode to proceed.</p>
+    <h2>Enter Passcode</h2>
     <input type="password" id="passcode" class="passcode-input" placeholder="Enter passcode">
     <button class="passcode-submit" onclick="checkPasscode()">Submit</button>
     <div id="passcode-message" class="passcode-message"></div>
