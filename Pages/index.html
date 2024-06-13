@@ -25,6 +25,7 @@
             text-align: center;
             max-width: 80%;
             margin-bottom: 20px;
+            display: none; /* Initially hidden */
         }
         .button-container {
             margin-top: 10px;
@@ -44,7 +45,6 @@
             background-color: #777;
         }
         .passcode-container {
-            margin-top: 20px;
             text-align: center;
         }
         .passcode-input {
@@ -82,7 +82,12 @@
         function checkPasscode() {
             var passcode = document.getElementById("passcode").value;
             if (passcode === "Blue2Good") {
-                document.body.style.background = "linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red)";
+                // Show the content and button container
+                document.querySelector(".content").style.display = "block";
+                document.querySelector(".button-container").style.display = "block";
+                // Hide passcode container
+                document.querySelector(".passcode-container").style.display = "none";
+                // Display success message
                 document.getElementById("passcode-message").innerText = "Correct passcode!";
             } else {
                 document.getElementById("passcode-message").innerText = "Incorrect passcode. Please try again.";
@@ -94,6 +99,13 @@
 </head>
 <body>
 
+<div class="passcode-container">
+    <h2>Enter Passcode</h2>
+    <input type="password" id="passcode" class="passcode-input" placeholder="Enter passcode">
+    <button class="passcode-submit" onclick="checkPasscode()">Submit</button>
+    <div id="passcode-message" class="passcode-message"></div>
+</div>
+
 <div class="content">
     <h1>Your Customizable Text</h1>
     <p>Modify this area to suit your needs.</p>
@@ -101,13 +113,6 @@
         <a href="https://example.com" target="_blank">Button 1</a>
         <a href="https://anotherlink.com" target="_blank">Button 2</a>
     </div>
-</div>
-
-<div class="passcode-container">
-    <h2>Enter Passcode</h2>
-    <input type="password" id="passcode" class="passcode-input" placeholder="Enter passcode">
-    <button class="passcode-submit" onclick="checkPasscode()">Submit</button>
-    <div id="passcode-message" class="passcode-message"></div>
 </div>
 
 <div class="copyright">
